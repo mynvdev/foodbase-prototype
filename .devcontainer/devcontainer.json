@@ -6,18 +6,35 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
 
   "features": {
-    "ghcr.io/devcontainers-contrib/features/firebase-cli:2": {}
+    "ghcr.io/devcontainers-contrib/features/firebase-cli:2": {},
+    "ghcr.io/devcontainers/features/java": {}
   },
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [5173],
+  "forwardPorts": [5173, 9000, 9099, 8080, 9199],
 
   "portsAttributes": {
     "5173": {
       "label": "FrontendApp",
+      "onAutoForward": "notify"
+    },
+    "9000": {
+      "label": "Firebase Emulator",
+      "onAutoForward": "notify"
+    },
+    "9099": {
+      "label": "Firebase Authentication",
+      "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "Firestore",
+      "onAutoForward": "notify"
+    },
+    "9199": {
+      "label": "Firebase Storage",
       "onAutoForward": "notify"
     }
   },

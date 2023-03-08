@@ -9,6 +9,13 @@
       "label": "npm: dev - frontend",
       "detail": "vite",
       "isBackground": true
+    },
+    {
+      "type": "shell",
+      "label": "Firebase - emulators",
+      "command": "firebase emulators:start",
+      "problemMatcher": [],
+      "isBackground": true
     }
   ]
 }
